@@ -7,9 +7,9 @@
  */
 int main(int ac, char *av[])
 {
-(void) ac;
 int i;
 int nbargument = 0;
+(void) ac;
 for (i = 1; av[i] != NULL; i++)
 {
 printf("argument est %d : %s\n", i, av[i]);
