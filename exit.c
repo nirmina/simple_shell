@@ -30,15 +30,15 @@ exit(status);
 }
 /**
  * _env - a function that print all envirement
- * @command: -
- * @status: -
- * Return: void;
- */
+ * @command: shell command
+ * @status: if its been executed succesfully
+ * Return: void
+ **/
 void _env(char **command, int status)
 {
 int i;
 (void) status;
-for(i = 0; environ[i]; i++)
+for (i = 0; environ[i]; i++)
 {
 write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
 write(STDOUT_FILENO, "\n", 1);
@@ -47,14 +47,15 @@ free2D(command);
 }
 /**
  * builtin_handle - a function that handle eash case
- * @command - its a shll command
+ * @command: its a shell command
  * @status: indicate if a command has been executed succesfully or not
+ * @argv: argument vector
  * Return: void
  */
-void builtin_handle(char **command,char **argv, int status)
+void builtin_handle(char **command, char **argv, int status)
 {
 (void) argv;
-if(_strcmp(command[0], "exit") == 0)
+if (_strcmp(command[0], "exit") == 0)
 {
 shell_exit(command, status);
 }

@@ -3,7 +3,7 @@
  * _strdup - duplicates a string
  * @str: the string to duplicate
  * Return: pointer to the duplicated string
- * */
+ **/
 char *_strdup(const char *str)
 {
 char *ptr;
@@ -23,13 +23,13 @@ for (i = 0; i <= length; i++)
 ptr[i] = str[i];
 return (ptr);
 }
-/*
+/**
  * _strcmp - Compare two strings.
- *  @s1: The first string to be compared.
+ * @s1: The first string to be compared.
  *  @s2: The second string to be compared.
  *  Return: Negative value if s1 is less than s2, 0 if they are equal,
  *  or positive value if s1 is greater than s2.
- *  */
+ **/
 int _strcmp(char *s1, char *s2)
 {
 int cmp;
@@ -47,8 +47,8 @@ return (cmp);
 /**
  * _strlen - returns the string len
  * @s: the source
- * * Return: the length
- * */
+ * Return: the length
+ **/
 int _strlen(char *s)
 {
 int len = 0;
