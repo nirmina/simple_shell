@@ -23,4 +23,8 @@ int _exe(char **cmd, char **argv);
 char **splitter(char *line);
 char *line_reader(void);
 int _putchar(char n);
+void shell_exit(char **command, int status);
+void _env(char **command, int status);
+void builtin_handle(char **command, char **argv, int status);
+int built_in(char *command);
 #endif
