@@ -1,18 +1,17 @@
 #include "shell.h"
 /**
- * _free2D - frees 2D array
- * @array: the source
+ * free2D - frees 2D array
+ * @str : the source
  */
-void _free2D(char **array)
+void free2D(char **str)
 {
 	int i;
-	if (array == NULL)
+
+	if (str == NULL)
 		return;
-	for (i = 0; array[i] != '\0'; i++)
+	for (i = 0; str[i]; i++)
 	{
-		free(array[i]);
-		array[i] = NULL;
+		free(str[i]);
 	}
-	free(array);
-	array = NULL;
+	free(str);
 }

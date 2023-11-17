@@ -7,45 +7,39 @@
 char **splitter(char *line)
 {
 	char *token = NULL, *tmp = NULL;
-	char **tokens = NULL;
-	int i = 0;
+	char **cmd = NULL;
+	int i = 0, count = 0;
 
-	if (!line)
-		return (NULL);
+	if (line == NULL)
+		return(NULL);
 	tmp = _strdup(line);
-	if (tmp == NULL)
-	{
-		return (NULL);
-	}
 	token = strtok(tmp, DELIM);
-	if (token == NULL)
+	if (!token)
 	{
-		free(line);
-		free(tmp);
+		free(tmp), tmp = NULL;
+		free(line), line = NULL;
 		return (NULL);
 	}
-	while (token != NULL)
+	while (token)
 	{
-		i++;
-		tokens = realloc(tokens, sizeof(char *) * i);
-		if (tokens == NULL)
-		{
-			free(line);
-			free(tmp);
-			return (NULL);
-		}
-		tokens[i - 1] = token;
+		count++;
 		token = strtok(NULL, DELIM);
 	}
-	i++;
-	tokens = realloc(tokens, sizeof(char *) * i);
-	if (tokens == NULL)
+	free(tmp), tmp = NULL;
+	cmd = malloc(sizeof(char *) * (count + 1));
+	if (cmd == NULL)
 	{
 		free(line);
-		free(tmp);
 		return (NULL);
 	}
-	tokens[i - 1] = NULL;
-	free(line);
-	return (tokens);
+	token = strtok(line, DELIM);
+	while (token)
+	{
+		cmd[i] = _strdup(token);
+		token = strtok(NULL, DELIM);
+		i++;
+	}
+	free(line), line = NULL;
+	cmd[i] = NULL;
+	return (cmd);
 }

@@ -16,14 +16,14 @@ int _exe(char **cmd, char **argv)
 		if (execve(cmd[0], cmd, environ) == -1)
 		{
 			perror(argv[0]);
-			_free2D(cmd);
-			exit(0);
+			free2D(cmd);
+			exit(100);
 		}
 	}
 	else
 	{
 		waitpid(pid, &status, 0);
-		_free2D(cmd);
+		free2D(cmd);
 	}
 	return(WEXITSTATUS(status));
 }

@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <fcntl.h>
+#define DELIM " \t\n"
 /* strings declaration : */
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
@@ -16,9 +17,7 @@ char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_strdup(const char *str);
 /* freer header */
-void _free2D(char **array);
-
-#define DELIM " \t\n"
+void free2D(char **str);
 extern char **environ;
 int _exe(char **cmd, char **argv);
 char **splitter(char *line);
