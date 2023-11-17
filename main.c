@@ -23,7 +23,7 @@ return (status);
 command = splitter(line);
 if (!command)
 continue;
-if(built_in(command[0]))
+if (built_in(command[0]))
 {
 builtin_handle(command, argv, status);
 }
