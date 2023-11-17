@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
 		command = splitter(line);
 		if (!command)
 			continue;
-			
 		status = _exe(command, argv);
 	}
-}		
+}

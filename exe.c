@@ -25,5 +25,5 @@ int _exe(char **cmd, char **argv)
 		waitpid(pid, &status, 0);
 		free2D(cmd);
 	}
-	return(WEXITSTATUS(status));
+	return (WEXITSTATUS(status));
 }

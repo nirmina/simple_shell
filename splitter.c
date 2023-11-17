@@ -11,7 +11,7 @@ char **splitter(char *line)
 	int i = 0, count = 0;
 
 	if (line == NULL)
-		return(NULL);
+		return (NULL);
 	tmp = _strdup(line);
 	token = strtok(tmp, DELIM);
 	if (!token)
