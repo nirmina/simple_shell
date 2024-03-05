@@ -9,7 +9,7 @@
 int _setenv(char *nom, char *value, int overwrite)
 {
 int i = 0, length = 0;
-extern char **environ;
+char **environ;
 char new_value;
 if (!nom || !value)
 return (-1);
