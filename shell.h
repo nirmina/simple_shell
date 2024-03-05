@@ -10,6 +10,7 @@
 #include <errno.h>
 #include <fcntl.h>
 #define DELIM " \t\n"
+extern char **environ;
 /* tools */
 void print_err(char *name, char *cmd, int idx);
 void reverse_str(char *str, int len);
