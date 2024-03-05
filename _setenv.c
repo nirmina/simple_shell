@@ -12,6 +12,7 @@ int _setenv(char *nom, char *value, int overwrite)
 int i = 0, length = 0;
 char *new_value;
 if (!nom || !value)
+fprintf(stderr, "Failure\n");
 return (-1);
 while (environ[i])
 {
